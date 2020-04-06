@@ -8,7 +8,7 @@
 # 激活环境
 
 `source activate py375`
-
+test
 
 
 # 安装第三方库
