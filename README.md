@@ -7,7 +7,6 @@ link：`https://realpython.com/web-scraping-with-scrapy-and-mongodb/`
 ## 1.1. 本地环境
 
 `win + r`打开命令行，输入命令`activate py2.7`
-`!!!`
 
 ## 1.2. 项目初始化
 
