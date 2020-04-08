@@ -5,6 +5,8 @@ import time
 
 url_saves = ''
 url = ''
+
+
 urls = ['{}'.format(str(i)) for i in range(30,930,30)]
 
 headers = {
@@ -43,5 +45,6 @@ def get_favs(url,data=None):
         }
         print(data)
 
+# 爬取多分页数据
 for single_url in urls:
     get_attractions(single_url)
