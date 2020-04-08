@@ -6,7 +6,7 @@ import time
 url = 'https://knewone.com/discover?page='
 
 def get_page(url,data=None):
-    wb_data = request.get(url,headers=headers)
+    wb_data = requests.get(url,headers=headers)
     soup  = BeautifulSoup(wb_data.text,'lxml')
     titles = soup.select('div.property_title > a[target="_blank"]')
     imgs = soup.select('img[width="160"]')

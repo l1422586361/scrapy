@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import request
+import requests
 import time
 
 
@@ -15,7 +15,7 @@ headers = {
 }
 
 def get_attractions(url,data=None):
-    wb_data = request.get(url)
+    wb_data = requests.get(url)
     time.sleep(2)
     soup  = BeautifulSoup(wb_data.text,'lxml')
     titles = soup.select('div.property_title > a[target="_blank"]')

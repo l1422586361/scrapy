@@ -12,4 +12,4 @@
 
 `conda install pymongo`
 
-# pycharm安装插件``
+# pycharm安装插件`mongo plugin`
