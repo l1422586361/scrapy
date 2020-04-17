@@ -3,6 +3,19 @@ import requests
 import time
 
 
+'''
+Source Link:
+    http://bj.xiaozhu.com
+Aim:
+    craw 300 Rental information detail
+Detail Include:
+    title,address,rent,first images link,landlord or landlady detail(images link,sex,name)
+Number:
+    300+
+'''
+
+
+
 urls = ['http://bj.xiaozhu.com'] + ['http://bj.xiaozhu.com/search-duanzufang-p{}-0/'.format(i) for i in range(2,20)]
 # print(urls)
 
