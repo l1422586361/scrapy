@@ -2,13 +2,13 @@ from bs4 import BeautifulSoup
 import requests
 import time
 
-url_1 = ['http://bj.xiaozhu.com']
-url_2 = ['http://bj.xiaozhu.com/search-duanzufang-p{}-0/'.format(i) for i in range(2,10)]
-urls = url_1 + url_2
+
+urls = ['http://bj.xiaozhu.com'] + ['http://bj.xiaozhu.com/search-duanzufang-p{}-0/'.format(i) for i in range(2,20)]
+# print(urls)
 
 def getLink(url,data=None):
     wb_data = requests.get(url)
-    time.sleep(2)
+    # time.sleep(2)
     soup = BeautifulSoup(wb_data.text,'lxml')
     links = soup.select('#page_list > ul > li > a')
     i = 0
@@ -19,8 +19,30 @@ def getLink(url,data=None):
                 }
         print(data)
 
+def getLinkDatas(urls,max,data=[]):
+    for url in urls:
+        print(url)
+        wb_data = requests.get(url)
+        # time.sleep(2)
+        soup = BeautifulSoup(wb_data.text, 'lxml')
+        links = soup.select('#page_list > ul > li > a')
+        for l in links:
+            if len(data) >= max:
+                print(len(data))
+                return data     # return is jump out from this function
+            link = l.get('href')
+            data.append(link)
+
+
+
+
 for url in urls:
     print(url)
     getLink(url)
+
+
+links = getLinkDatas(urls,300)
+print(links)
+print(len(links))
 
 
